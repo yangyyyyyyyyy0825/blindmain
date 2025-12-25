@@ -1,0 +1,48 @@
+[
+  {
+    "name": "安静小区",
+    "duration": 15,
+    "base_speed": 100,
+    "density": 0.6,
+    "obstacles": [
+      "bike",
+      "trash"
+    ],
+    "description": "清晨的小区街道，行人稀少"
+  },
+  {
+    "name": "早市街道",
+    "duration": 20,
+    "base_speed": 150,
+    "density": 0.8,
+    "obstacles": [
+      "bike",
+      "cart",
+      "stand"
+    ],
+    "description": "热闹的早市，摊位林立"
+  },
+  {
+    "name": "商业区",
+    "duration": 15,
+    "base_speed": 200,
+    "density": 1.0,
+    "obstacles": [
+      "car",
+      "bike",
+      "cone"
+    ],
+    "description": "繁忙的商业区，车流密集"
+  },
+  {
+    "name": "学校门口",
+    "duration": 10,
+    "base_speed": 120,
+    "density": 0.7,
+    "obstacles": [
+      "bike",
+      "child"
+    ],
+    "description": "放学时的校门口，孩子们嬉戏"
+  }
+]

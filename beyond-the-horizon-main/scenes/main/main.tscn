@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://0u8g6vcw3yve"]
+
+[ext_resource type="Script" uid="uid://dyc5groa7xl5u" path="res://scripts/core/game_session.gd" id="1_hyk8p"]
+[ext_resource type="PackedScene" uid="uid://dkkkjbm42ldna" path="res://scenes/main/world.tscn" id="1_k2fmo"]
+[ext_resource type="PackedScene" uid="uid://dqpc3101rd1wm" path="res://scenes/prefabs/player.tscn" id="2_l3cfh"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_group_ = true
+
+[node name="HUD" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="World" parent="." instance=ExtResource("1_k2fmo")]
+
+[node name="Player" parent="." instance=ExtResource("2_l3cfh")]
+
+[node name="AudioManager" type="Node" parent="."]
+
+[node name="GameSession" type="Node" parent="."]
+script = ExtResource("1_hyk8p")

@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://dqpc3101rd1wm"]
+
+[ext_resource type="Script" uid="uid://cn6oupdj1dwwj" path="res://scripts/player/player_controller.gd" id="1_player_controller"]
+[ext_resource type="Texture2D" uid="uid://h2isupn5g46s" path="res://assets/icons/player/idle.svg" id="1_player_idle"]
+[ext_resource type="Texture2D" uid="uid://b7vry8lwdku8d" path="res://assets/icons/player/run.svg" id="3_8cdkg"]
+[ext_resource type="Texture2D" uid="uid://d25521x4g17rd" path="res://assets/icons/player/walk.svg" id="4_56dyf"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_06qtw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_player_idle")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_8cdkg")
+}],
+"loop": true,
+"name": &"run",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_56dyf")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 8.0
+}]
+
+[node name="Player" type="Node2D"]
+script = ExtResource("1_player_controller")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_player_idle")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_06qtw")
+animation = &"walk"
