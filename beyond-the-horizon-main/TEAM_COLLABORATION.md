@@ -72,9 +72,9 @@ scenes/                # 所有场景文件
 │   ├── Obstacle.tscn  # ✅ 障碍物
 │   └── ParticleClear.tscn # ✅ 粒子特效
 └── ui/                # UI场景
-    ├── HUD.tscn      # ✅ 游戏界面
-    ├── ChallengeSelect.tscn # ✅ 挑战选择
-    └── ResultPanel.tscn # ✅ 结果面板
+	├── HUD.tscn      # ✅ 游戏界面
+	├── ChallengeSelect.tscn # ✅ 挑战选择
+	└── ResultPanel.tscn # ✅ 结果面板
 
 scripts/ui/            # UI相关脚本
 ├── HUDController.gd   # ✅ UI控制器
@@ -216,7 +216,7 @@ func set_sfx_volume(volume)
 
 #### 🔗 接口约定
 ```gdscript
-# SceneManager.gd 接口
+# SceneManager.gd 接口，
 signal scene_changed(name, duration)
 signal all_scenes_completed()
 func load_scenes_config()
@@ -376,14 +376,14 @@ signal time_updated(seconds: int)
 
 ## 公共方法
 func start_game(challenge_mode: String) -> void
-    # 启动游戏
-    # 参数: challenge_mode - 挑战模式
-    # 返回: 无
+	# 启动游戏
+	# 参数: challenge_mode - 挑战模式
+	# 返回: 无
 
 func pause_game() -> void
-    # 暂停游戏
-    # 参数: 无
-    # 返回: 无
+	# 暂停游戏
+	# 参数: 无
+	# 返回: 无
 
 ## 使用示例
 var session = GameSession.new()

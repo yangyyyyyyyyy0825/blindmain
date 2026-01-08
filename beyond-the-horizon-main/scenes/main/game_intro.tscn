@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8a7h4x2pxk7i"]
+
+[ext_resource type="Script" uid="uid://cv5yyshgv0kqo" path="res://scripts/ui/world/game_intro.gd" id="1_fnryk"]
+[ext_resource type="Texture2D" uid="uid://bxpqym46xw4au" path="res://assets/icons/background/背景.png" id="2_v86nd"]
+
+[node name="Game Intro" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_fnryk")
+
+[node name="IntroTitle" type="Label" parent="."]
+layout_mode = 0
+offset_left = 395.0
+offset_top = 80.0
+offset_right = 755.0
+offset_bottom = 160.0
+theme_override_font_sizes/font_size = 40
+text = " 游戏介绍"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="IntroContent" type="Label" parent="."]
+layout_mode = 0
+offset_left = 210.0
+offset_top = 180.0
+offset_right = 946.0
+offset_bottom = 513.0
+theme_override_font_sizes/font_size = 32
+text = "当城市的喧嚣淹没细微的需求
+当熟悉的街道暗藏无形的阻碍
+你是否曾留意过盲道上那些被忽略的困境？
+《盲道保卫战：视野之外》以创新游戏化交互为载体
+带你走进 感官受限世界
+在节奏与抉择中
+读懂视障人士的日常出行挑战。"
+
+[node name="backroot" type="Button" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "回到首页"
+
+[node name="background" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(576, 321.99997)
+scale = Vector2(0.5625, 0.34644)
+texture = ExtResource("2_v86nd")
+
+[connection signal="pressed" from="backroot" to="." method="_on_back_to_root_btn_pressed"]

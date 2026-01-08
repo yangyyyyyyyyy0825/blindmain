@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="beyond_the_horizon"
-run/main_scene="uid://0u8g6vcw3yve"
+run/main_scene="uid://b562gg2h7o43x"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Global="*res://scripts/global/Global.gd"
 
 [rendering]
 

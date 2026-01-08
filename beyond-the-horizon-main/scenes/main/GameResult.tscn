@@ -1,0 +1,74 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbvau4pqse4ec"]
+
+[ext_resource type="Script" uid="uid://crijppoarrli7" path="res://scripts/ui/world/game_result.gd" id="1_2816o"]
+[ext_resource type="Texture2D" uid="uid://bxpqym46xw4au" path="res://assets/icons/background/背景.png" id="2_f52pw"]
+
+[node name="GameResult" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_2816o")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_left = 395.0
+offset_top = 80.0
+offset_right = 603.0
+offset_bottom = 152.0
+theme_override_font_sizes/font_size = 52
+text = "游戏结算"
+vertical_alignment = 1
+
+[node name="DifficultyText" type="Label" parent="."]
+layout_mode = 0
+offset_left = 395.0
+offset_top = 180.0
+offset_right = 719.0
+offset_bottom = 230.0
+theme_override_font_sizes/font_size = 36
+text = "挑战难度：无尽模式"
+vertical_alignment = 1
+
+[node name="TimeText" type="Label" parent="."]
+layout_mode = 0
+offset_left = 395.0
+offset_top = 260.0
+offset_right = 667.0
+offset_bottom = 310.0
+theme_override_font_sizes/font_size = 36
+text = "游戏时长：00:00"
+vertical_alignment = 1
+
+[node name="ErrorText" type="Label" parent="."]
+layout_mode = 0
+offset_left = 395.0
+offset_top = 340.0
+offset_right = 596.0
+offset_bottom = 390.0
+theme_override_font_sizes/font_size = 36
+text = "失误次数：0"
+vertical_alignment = 1
+
+[node name="ScoreText" type="Label" parent="."]
+layout_mode = 0
+offset_left = 395.0
+offset_top = 420.0
+offset_right = 596.0
+offset_bottom = 470.0
+theme_override_font_sizes/font_size = 36
+text = "最终分数：0"
+vertical_alignment = 1
+
+[node name="BackMenuBtn" type="Button" parent="."]
+layout_mode = 0
+offset_right = 120.0
+offset_bottom = 42.0
+theme_override_font_sizes/font_size = 24
+text = "返回首页"
+
+[node name="background" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(576, 323.99997)
+scale = Vector2(0.5625, 0.34431458)
+texture = ExtResource("2_f52pw")
+
+[connection signal="pressed" from="BackMenuBtn" to="." method="_on_back_menu_btn_pressed"]

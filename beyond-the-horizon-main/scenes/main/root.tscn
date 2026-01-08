@@ -1,0 +1,59 @@
+[gd_scene load_steps=3 format=3 uid="uid://b562gg2h7o43x"]
+
+[ext_resource type="Script" uid="uid://de43jwihsfifa" path="res://scripts/ui/world/root.gd" id="1_jqxqw"]
+[ext_resource type="Texture2D" uid="uid://bxpqym46xw4au" path="res://assets/icons/background/背景.png" id="2_sxpjd"]
+
+[node name="root" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_jqxqw")
+
+[node name="MainMenu" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(450, 650)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 320.0
+offset_right = 817.0
+offset_bottom = 650.0
+alignment = 1
+
+[node name="GameTitle" type="Label" parent="MainMenu"]
+modulate = Color(0.18039216, 0.20392157, 0.2509804, 1)
+custom_minimum_size = Vector2(450, 90)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 52
+text = "Beyond the Horizon
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartGameBtn" type="Button" parent="MainMenu"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "开始游戏"
+
+[node name="DifficultyBtn" type="Button" parent="MainMenu"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "难度选择"
+
+[node name="GameIntroBtn" type="Button" parent="MainMenu"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "游戏介绍"
+
+[node name="background" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(576, 324)
+scale = Vector2(0.5625, 0.3443146)
+texture = ExtResource("2_sxpjd")
+
+[connection signal="pressed" from="MainMenu/StartGameBtn" to="." method="_on_start_game_btn_pressed"]
+[connection signal="pressed" from="MainMenu/DifficultyBtn" to="." method="_on_difficulty_btn_pressed"]
+[connection signal="pressed" from="MainMenu/GameIntroBtn" to="." method="_on_game_intro_btn_pressed"]

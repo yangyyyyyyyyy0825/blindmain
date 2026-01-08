@@ -1,25 +1,68 @@
-[gd_scene load_steps=4 format=3 uid="uid://0u8g6vcw3yve"]
+[gd_scene load_steps=5 format=3 uid="uid://0u8g6vcw3yve"]
 
 [ext_resource type="Script" uid="uid://dyc5groa7xl5u" path="res://scripts/core/game_session.gd" id="1_hyk8p"]
 [ext_resource type="PackedScene" uid="uid://dkkkjbm42ldna" path="res://scenes/main/world.tscn" id="1_k2fmo"]
 [ext_resource type="PackedScene" uid="uid://dqpc3101rd1wm" path="res://scenes/prefabs/player.tscn" id="2_l3cfh"]
+[ext_resource type="Texture2D" uid="uid://bxpqym46xw4au" path="res://assets/icons/background/背景.png" id="4_l3cfh"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
 metadata/_edit_group_ = true
 
 [node name="HUD" type="Control" parent="."]
-layout_mode = 3
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="TopBar" type="HBoxContainer" parent="HUD"]
+custom_minimum_size = Vector2(800, 80)
+layout_mode = 1
+offset_right = 800.0
+offset_bottom = 80.0
+
+[node name="ExitBtn" type="Button" parent="HUD/TopBar"]
+custom_minimum_size = Vector2(100, 5)
+layout_mode = 2
+theme_override_colors/icon_normal_color = Color(0.22745098, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "设置"
+
+[node name="StatusInfo" type="HBoxContainer" parent="HUD/TopBar"]
+layout_mode = 2
+
+[node name="ErrorCount" type="Label" parent="HUD/TopBar/StatusInfo"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "失误数：0"
+
+[node name="GameTime" type="Label" parent="HUD/TopBar/StatusInfo"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "游戏时间：00:00"
+
+[node name="GameSceneName" type="Label" parent="HUD/TopBar/StatusInfo"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "当前场景：main"
+
+[node name="Score" type="Label" parent="HUD/TopBar/StatusInfo"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "分数：0"
+
+[node name="MenuPopup" type="PopupMenu" parent="HUD"]
+oversampling_override = 1.0
+item_count = 3
+item_0/text = "🔄重新开始"
+item_0/id = 0
+item_1/text = "⏸️暂停游戏"
+item_1/id = 1
+item_2/text = "❌退出游戏"
+item_2/id = 2
 
 [node name="World" parent="." instance=ExtResource("1_k2fmo")]
 
@@ -29,3 +72,9 @@ grow_vertical = 2
 
 [node name="GameSession" type="Node" parent="."]
 script = ExtResource("1_hyk8p")
+
+[node name="background" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(576, 324)
+scale = Vector2(0.5625, 0.3443146)
+texture = ExtResource("4_l3cfh")
